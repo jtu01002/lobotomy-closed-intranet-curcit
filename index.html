@@ -166,20 +166,24 @@ const pages = {
   title:"공지사항",
   html:`<div class="record"><small>NOTICE 12-031 // 3일 전</small><p>제12구 사내 인터넷망은 서버 점검으로 인해 순차적으로 폐쇄될 예정입니다. 모든 직원은 개인 단말기의 접속을 종료하십시오.</p></div>
   <div class="record"><small>NOTICE 12-028 // 6일 전</small><p>야간 근무자는 동쪽 복도에서 들리는 호출음에 응답하지 마십시오. 해당 구역은 현재 사용되지 않습니다.</p></div>
-  <div class="record"><small>NOTICE 12-019 // 삭제됨</small><p>이 공지사항은 관리자에 의해 삭제되었습니다.</p></div>`
+  <div class="record"><small>NOTICE 12-019 // 삭제됨</small><p>이 공지사항은 관리자에 의해 삭제되었습니다.</p></div>
+  <div class="record"><small>RECOVERED NOTE A // 조각 1</small><p class="clue-preserve">첫 번째 조각. 목에 걸린 사슬처럼 사람을 붙들고, 같은場所를 맴돌게 하는 것. 기록 담당자의 메모에는 이것을 '굴레'라고 적어 두었다.</p></div>`
  },
  staff: {
   kicker:"PERSONNEL DATABASE / 12-B",
   title:"직원 데이터베이스",
   html:`<div class="record"><small>EMPLOYEE 12044</small><p>이름: [열람 제한]<br>부서: 정보관리팀<br>상태: 퇴직 처리<br>비고: 퇴직 일자 이후에도 사내망 접속 기록이 존재함.</p></div>
-  <div class="record"><small>EMPLOYEE 12045</small><p>이름: [데이터 손상]<br>부서: 정보관리팀<br>상태: 재직 여부 확인 불가<br>비고: 해당 사번은 인사 데이터베이스에 등록된 적이 없습니다.</p></div>`
+  <div class="record"><small>EMPLOYEE 12045</small><p>이름: [데이터 손상]<br>부서: 정보관리팀<br>상태: 재직 여부 확인 불가<br>비고: 해당 사번은 인사 데이터베이스에 등록된 적이 없습니다.</p></div>
+  <div class="record"><small>RECOVERED NOTE B // 조각 2</small><p class="clue-preserve">두 번째 조각. 굴레에서 벗어나는 방법은 모른 척 지나치는 것이 아니다. 사슬의 고리를 잘라, 다시 이어지지 않게 하는 행동을 가리키는 말. 메모 끝에는 '끊어내며'라고 쓰여 있다.</p></div>`
  },
  archive: {
   kicker:"DOCUMENT ARCHIVE / 12-C",
   title:"문서 보관소",
   html:`<div class="record"><small>FILE 12-C-001 // 일반</small><p>서버 이전 작업은 예정대로 진행한다. 단, 이전 대상 목록에 포함되지 않은 디렉터리가 발견되었다. 해당 디렉터리의 생성 일자는 시스템 도입일보다 4년 앞선다.</p></div>
   <div class="record"><small>FILE 12-C-009 // 열람 제한</small><p>문서 내용의 일부가 손상되었습니다. 복구된 문장: “우리는 문을 닫았다. 그런데 안쪽에서 계속 두드리는 소리가 들린다.”</p></div>
-  <div class="record"><small>FILE 12-C-??? // 암호화</small><p>파일을 열람하려면 추가 인증이 필요합니다. 인증 코드: <strong style="color:#d8c49a">문서의 작성자는 누구인가?</strong></p></div>`
+  <div class="record"><small>FILE 12-C-??? // 암호화</small><p>파일을 열람하려면 추가 인증이 필요합니다. 인증 코드: <strong style="color:#d8c49a">문서의 작성자는 누구인가?</strong></p></div>
+  <div class="record"><small>RECOVERED NOTE C // 조각 3</small><p class="clue-preserve">세 번째 조각. 이곳의 직원들이 가장 피하려 했던 감정. 눈앞의 위협을 외면하지 않고 정면으로 마주한다는 문장으로 남아 있다. '공포를 직면하는'.</p></div>
+  <div class="record"><small>INDEX FRAGMENT // 조합 규칙</small><p class="clue-preserve">회수 메모는 조각 번호 순서대로 읽을 것. 마지막 조각은 시스템 로그에 남아 있다. 문장 부호는 원래 승인 문구의 쉼표를 따른다.</p></div>`
  },
  logs: {
   kicker:"SYSTEM LOG / 12-D",
@@ -187,7 +191,8 @@ const pages = {
   html:`<div class="record"><small>02:14:08 // LOGIN</small><p>USER: ADMIN_01 — 접속 성공</p></div>
   <div class="record"><small>02:14:09 // LOGOUT</small><p>USER: ADMIN_01 — 연결 종료</p></div>
   <div class="record"><small>02:14:09 // LOGIN</small><p>USER: ADMIN_01 — 접속 성공</p></div>
-  <div class="record"><small>02:14:10 // WARNING</small><p>동일 계정의 중복 세션이 감지되었습니다. 현재 접속 중인 사용자는 1명입니다.</p></div>`
+  <div class="record"><small>02:14:10 // WARNING</small><p>동일 계정의 중복 세션이 감지되었습니다. 현재 접속 중인 사용자는 1명입니다.</p></div>
+  <div class="record"><small>RECOVERED NOTE D // 조각 4</small><p class="clue-preserve">마지막 조각. 공포를 직면할 때 필요한 것은 도망칠 발이 아니라, 그것을 똑바로 바라보는 감각 기관이다. 메모에는 한 글자로 적혀 있다. '눈'.</p></div>`
  },
  sealed: {
   kicker:"RESTRICTED DIRECTORY / 12-X",
@@ -199,7 +204,7 @@ const loginView=document.getElementById("loginView"), portalView=document.getEle
 
 // 기록 문서에만 소량의 문자 손상을 적용하고, 핵심 단서는 읽을 수 있게 보존합니다.
 function distressArchiveText(){
- const nodes=document.querySelectorAll("#pageContent .record p, #pageContent .record small");
+ const nodes=document.querySelectorAll("#pageContent .record p:not(.clue-preserve), #pageContent .record small");
  const damaged=["▒","░","�","▓"];
  nodes.forEach((el,blockIndex)=>{
   const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
