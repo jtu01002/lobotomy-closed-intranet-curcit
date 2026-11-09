@@ -56,6 +56,25 @@ body.intro-active{overflow:hidden}
 body.intro-active>header,body.intro-active>main{visibility:hidden}
 @media(max-width:560px){.intro-overlay{font-size:8px}.intro-bottom{font-size:10px;align-items:flex-start;flex-direction:column}}
 
+
+/* ABANDONED ARCHIVE VISUAL LAYER */
+body{background:radial-gradient(ellipse at 48% -10%,#263029 0,#111713 42%,#070a08 100%);color:#b9c2b9;filter:saturate(.72)}
+body:after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;opacity:.22;background:linear-gradient(90deg,transparent 0 7%,#c7d4c1 7.08%,transparent 7.18% 100%),repeating-linear-gradient(0deg,transparent 0 87px,#d3ddd0 88px,transparent 89px 173px),radial-gradient(ellipse at 50% 50%,transparent 42%,#0009 100%);mix-blend-mode:screen;animation:archiveFlicker 11s infinite steps(1)}
+@keyframes archiveFlicker{0%,17%,18%,53%,54%,100%{opacity:.13;transform:translateX(0)}17.2%{opacity:.38;transform:translateX(-3px)}17.5%{opacity:.08;transform:translateX(4px)}53.2%{opacity:.34;transform:translateY(2px)}53.5%{opacity:.12;transform:translateY(-1px)}}
+header{background:#090e0cd9;border-bottom-color:#29352e;text-shadow:1px 0 #7f9b86}
+.panel{background:linear-gradient(145deg,#151b17ed,#0b100ded);border-color:#344037;box-shadow:0 18px 60px #000a,inset 0 0 35px #aab99c08}
+.panel:after{content:"";position:absolute;pointer-events:none;inset:0;opacity:.2;background:linear-gradient(transparent 0 31%,#d3dfd0 31.15%,transparent 31.35% 72%,#000 72.2%,transparent 72.5%);mix-blend-mode:screen}
+.record{position:relative;background:linear-gradient(110deg,#0b100d,#111713 48%,#090e0b);border-color:#303a32;box-shadow:inset 0 0 22px #0008}
+.record:nth-child(2n){border-left-color:#697365;border-right-color:#202a23}
+.record:before{content:"";position:absolute;right:0;top:0;width:28px;height:1px;background:#879182;opacity:.35}
+.record p{color:#aab5aa;text-shadow:.35px 0 #778c7b}
+.kicker,footer,.meta{color:#78847a}
+.warning{background:#201b17;border-left-color:#8f5e52;color:#c2a49a}
+.cipher{background:#070b09;border-color:#465147;box-shadow:inset 0 0 28px #000}
+input{background:#080c0a;border-color:#3b473e}
+button,.tile{filter:grayscale(.25);border-color:#465248}
+@media(prefers-reduced-motion:reduce){body:after{animation:none}}
+
 </style>
 </head>
 <body>
@@ -177,6 +196,26 @@ const pages = {
  }
 };
 const loginView=document.getElementById("loginView"), portalView=document.getElementById("portalView"), contentView=document.getElementById("contentView");
+
+// 기록 문서에만 소량의 문자 손상을 적용하고, 핵심 단서는 읽을 수 있게 보존합니다.
+function distressArchiveText(){
+ const nodes=document.querySelectorAll("#pageContent .record p, #pageContent .record small");
+ const damaged=["▒","░","�","▓"];
+ nodes.forEach((el,blockIndex)=>{
+  const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+  let node,offset=0;
+  while((node=walker.nextNode())){
+   const chars=Array.from(node.nodeValue);
+   for(let i=0;i<chars.length;i++){
+    if((offset+i+blockIndex*7)%47===19 && chars[i].trim()!==""){
+     chars[i]=damaged[(offset+i+blockIndex)%damaged.length];
+    }
+   }
+   node.nodeValue=chars.join("");
+   offset+=chars.length;
+  }
+ });
+}
 function login(){
  const value=document.getElementById("password").value.trim();
  if(value===PASSWORD){
@@ -195,6 +234,7 @@ document.querySelectorAll("[data-page]").forEach(btn=>btn.addEventListener("clic
  document.getElementById("pageKicker").textContent=page.kicker;
  document.getElementById("pageTitle").textContent=page.title;
  document.getElementById("pageContent").innerHTML=page.html;
+ distressArchiveText();
  portalView.classList.add("hidden");contentView.classList.remove("hidden");
 }));
 document.getElementById("backBtn").addEventListener("click",()=>{contentView.classList.add("hidden");portalView.classList.remove("hidden")});
