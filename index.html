@@ -192,7 +192,7 @@ const pages = {
  sealed: {
   kicker:"RESTRICTED DIRECTORY / 12-X",
   title:"봉인된 디렉터리",
-  html:`<div class="warning">접근 권한이 없습니다. 관리자 인증이 필요합니다.</div><p>이 디렉터리는 현재 사내망의 어느 메뉴에도 연결되어 있지 않습니다.</p><p style="color:#718078">마지막 수정 시각: 기록 없음</p>`
+  html:`<div class="warning">접근 권한이 없습니다. 관리자 인증이 필요합니다.</div><p>해당 디렉터리는 별도의 승인 문구를 통해서만 열람할 수 있습니다.</p><label for="archivePassword">AUTHORIZATION PHRASE</label><input id="archivePassword" type="password" placeholder="승인 문구를 입력하십시오." autocomplete="off"><div class="actions"><button id="unlockArchiveBtn">인증</button></div><div class="error" id="archiveError" aria-live="polite"></div><p style="color:#718078">마지막 수정 시각: 기록 없음</p>`
  }
 };
 const loginView=document.getElementById("loginView"), portalView=document.getElementById("portalView"), contentView=document.getElementById("contentView");
@@ -238,6 +238,24 @@ document.querySelectorAll("[data-page]").forEach(btn=>btn.addEventListener("clic
  portalView.classList.add("hidden");contentView.classList.remove("hidden");
 }));
 document.getElementById("backBtn").addEventListener("click",()=>{contentView.classList.add("hidden");portalView.classList.remove("hidden")});
+const ARCHIVE_AUTHORIZATION = "굴레를 끊어내며, 공포를 직면하는 눈";
+const ARCHIVE_DESTINATION = "https://jtu01002.github.io/SECTOR-12-CLOSED-ARCHIVE/";
+function unlockArchiveDirectory(){
+ const field=document.getElementById("archivePassword");
+ const error=document.getElementById("archiveError");
+ if(!field || !error) return;
+ if(field.value.trim()===ARCHIVE_AUTHORIZATION){
+  document.getElementById("pageContent").innerHTML=`<div class="record"><small>AUTHORIZATION ACCEPTED // 12-X</small><p>승인 문구가 확인되었습니다. 보관된 문서의 열람 권한이 임시로 부여되었습니다.</p><div class="actions"><a href="${ARCHIVE_DESTINATION}" style="display:inline-block;padding:12px 17px;background:#263a2e;border:1px solid #607969;color:#e1e9e2;text-decoration:none;letter-spacing:.08em">12구 폐쇄부지 관련 문서 열람 →</a></div></div>`;
+ }else{
+  error.textContent="인증 실패: 승인 문구가 일치하지 않습니다.";
+ }
+}
+document.getElementById("pageContent").addEventListener("click",e=>{
+ if(e.target && e.target.id==="unlockArchiveBtn") unlockArchiveDirectory();
+});
+document.getElementById("pageContent").addEventListener("keydown",e=>{
+ if(e.target && e.target.id==="archivePassword" && e.key==="Enter") unlockArchiveDirectory();
+});
 </script>
 </body>
 </html>
