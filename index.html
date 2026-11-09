@@ -207,7 +207,7 @@ function distressArchiveText(){
   while((node=walker.nextNode())){
    const chars=Array.from(node.nodeValue);
    for(let i=0;i<chars.length;i++){
-    if((offset+i+blockIndex*7)%47===19 && chars[i].trim()!==""){
+    if((offset+i+blockIndex*7)%19===8 && chars[i].trim()!==""){
      chars[i]=damaged[(offset+i+blockIndex)%damaged.length];
     }
    }
