@@ -81,7 +81,7 @@ body.intro-active>header,body.intro-active>main{visibility:hidden}
   <h1>사내 인터넷망에 오신 것을 환영합니다.</h1>
   <p>현재 본 인터넷망은 폐쇄되어 있습니다.<br>열람 권한으로 전환하시려면 아래 암호문을 해독한 뒤 비밀번호를 입력해 주십시오.</p>
   <div class="warning">주의: 승인되지 않은 접근 시도는 기록됩니다.<br>최근 접속 기록 중 일부가 정상적으로 종료되지 않았습니다.</div>
-  <div class="cipher"><div class="kicker">ENCRYPTED MESSAGE // FILE 001</div><div class="code">19 · 5 · 3 · 20 · 15 · 18</div><div class="kicker">ACCESS KEY REQUIRED</div></div>
+  <div class="cipher"><div class="kicker">ENCRYPTED MESSAGE // FILE 001</div><div class="code" style="font-size:clamp(11px,2vw,15px);letter-spacing:.04em;line-height:1.8">RUFCM0I1RUQ4RkFDRUJBNUJDMjBFQkE3ODhFQ0EzQkNFRDk1OThFQUIzQTAyQzIwRUJBRkI4RUI5RTk4RUJBNUJDMjBFQ0IwQkRFQ0ExQjBFRDk1OThFQjlEQkMyRQ%3D%3D</div><div class="kicker">DECODE ORDER: URL → BASE64 → HEX → UTF-8</div><div class="kicker" style="margin-top:8px">ACCESS KEY REQUIRED</div></div>
   <label for="password">PASSWORD</label>
   <input id="password" type="password" placeholder="비밀번호를 입력하십시오." autocomplete="off">
   <div class="actions"><button id="loginBtn">로그인</button></div>
@@ -140,7 +140,7 @@ body.intro-active>header,body.intro-active>main{visibility:hidden}
 
 // 게임 진행에 맞게 아래 비밀번호와 문서 내용을 수정하세요.
 // 이 파일은 ARG 연출용 예시이며, 정답을 소스에서 숨기는 보안 시스템은 아닙니다.
-const PASSWORD = "sector"; // 예시 암호문 19·5·3·20·15·18을 A1Z26으로 해독하면 SECTOR
+const PASSWORD = "공포를 마주하고, 미래를 창조하라."; // URL 인코딩 → Base64 → HEX → UTF-8 순서로 해독
 const pages = {
  notice: {
   kicker:"INTERNAL NOTICE / 12-A",
@@ -178,7 +178,7 @@ const pages = {
 };
 const loginView=document.getElementById("loginView"), portalView=document.getElementById("portalView"), contentView=document.getElementById("contentView");
 function login(){
- const value=document.getElementById("password").value.trim().toLowerCase();
+ const value=document.getElementById("password").value.trim();
  if(value===PASSWORD){
   loginView.classList.add("hidden"); portalView.classList.remove("hidden");
   document.getElementById("netStatus").textContent="VIEWER ACCESS";
