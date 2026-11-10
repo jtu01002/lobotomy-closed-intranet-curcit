@@ -76,97 +76,6 @@ button,.tile{filter:grayscale(.25);border-color:#465248}
 @media(prefers-reduced-motion:reduce){body:after{animation:none}}
 
 
-/* AGED PAPER / ABANDONED INTRANET LAYER */
-body{
-  background:
-    radial-gradient(ellipse at 12% 18%,#76594a18 0 2%,transparent 13%),
-    radial-gradient(ellipse at 88% 76%,#7d3d3214 0 1.2%,transparent 11%),
-    radial-gradient(ellipse at 50% 0%,#d8c7a6 0,#b8a889 58%,#887d68 100%);
-  color:#39382f;
-}
-header{
-  background:linear-gradient(100deg,#d0c09dF2,#b9aa8cF2);
-  color:#5e594b;
-  border-bottom:1px solid #756b56;
-  text-shadow:none;
-}
-header strong,.status{color:#624f3d}
-.status{border-color:#98776a}
-main{position:relative}
-.panel{
-  color:#39382f;
-  background:
-    radial-gradient(ellipse at 8% 12%,#8c4b3b18 0 1.2%,transparent 9%),
-    radial-gradient(ellipse at 94% 88%,#70423816 0 1.5%,transparent 10%),
-    repeating-linear-gradient(0deg,#74644808 0 1px,transparent 1px 4px),
-    linear-gradient(135deg,#e3d7b9,#cfc09e 55%,#d9c9a7);
-  border-color:#897b60;
-  box-shadow:0 18px 45px #17130d66,inset 0 0 34px #725a351c;
-}
-.panel:before{background:#79684d}
-.panel:after{
-  inset:0;z-index:0;opacity:.32;pointer-events:none;
-  background:
-    radial-gradient(ellipse at 91% 17%,#743b3020 0 1.4%,transparent 7%),
-    radial-gradient(ellipse at 4% 83%,#71392b18 0 1%,transparent 6%),
-    repeating-linear-gradient(92deg,transparent 0 17px,#78694b08 18px,transparent 19px 31px);
-  mix-blend-mode:multiply;
-}
-.panel>*{position:relative;z-index:1}
-.kicker,footer,.meta{color:#71664f}
-h1{color:#38372f}
-h2{color:#59664f}
-p{color:#484438}
-.warning{
-  background:linear-gradient(100deg,#9a59451c,#8b4d3b0d);
-  border-left-color:#895448;color:#70483e;
-}
-.cipher{
-  background:linear-gradient(135deg,#c4b48f,#d7c9a8);
-  border-color:#887b60;box-shadow:inset 0 0 24px #5c4b3026;
-}
-.cipher .code{color:#37382f}
-label{color:#6b604b}
-input{
-  background:#e5d9bc;color:#39372f;border-color:#8c7d60;
-  box-shadow:inset 0 1px 5px #6a563022;
-}
-input:focus{border-color:#69775e;box-shadow:0 0 0 2px #69775e26}
-button{
-  background:#77785e;border-color:#65694f;color:#f0e8d5;
-}
-button:hover{background:#666c54}
-button.secondary{background:#c6b894;border-color:#8b7c60;color:#4a493c}
-.tile{
-  background:
-    radial-gradient(ellipse at 95% 8%,#82483b18 0 1.5%,transparent 10%),
-    repeating-linear-gradient(0deg,#77684b08 0 1px,transparent 1px 4px),
-    linear-gradient(135deg,#dfd2b2,#c9b995);
-  border-color:#918263;color:#3e3b31;
-}
-.tile b{color:#58644f}
-.tile span{color:#71664f}
-.record{
-  background:
-    radial-gradient(ellipse at 97% 12%,#813f331c 0 1.3%,transparent 9%),
-    radial-gradient(ellipse at 3% 91%,#7c493514 0 1%,transparent 7%),
-    repeating-linear-gradient(0deg,#77684b08 0 1px,transparent 1px 4px),
-    linear-gradient(110deg,#dfd2b2,#cbbd9b 48%,#d8c9a7);
-  border-color:#938365;box-shadow:inset 0 0 18px #6a55301c;
-}
-.record:before{background:#856f50}
-.record:after{
-  content:"";position:absolute;left:12px;bottom:9px;width:30px;height:12px;
-  pointer-events:none;opacity:.2;
-  background:radial-gradient(ellipse,#754035 0, #87504466 35%,transparent 72%);
-  transform:rotate(-17deg);
-}
-.record small{color:#766044}
-.record p{color:#494438;text-shadow:none}
-.error{color:#87483e}
-a{color:#59684f}
-@media(max-width:520px){.panel{padding:clamp(18px,4vw,28px)}}
-
 </style>
 </head>
 <body>
@@ -194,7 +103,7 @@ a{color:#59684f}
   <div class="warning">주의: 승인되지 않은 접근 시도는 기록됩니다.<br>최근 접속 기록 중 일부가 정상적으로 종료되지 않았습니다.</div>
   <div class="cipher"><div class="kicker">ENCRYPTED MESSAGE // FILE 001</div><div class="code" style="font-size:clamp(11px,2vw,15px);letter-spacing:.04em;line-height:1.8">RUFCM0I1RUQ4RkFDRUJBNUJDMjBFQkE3ODhFQ0EzQkNFRDk1OThFQUIzQTAyQzIwRUJBRkI4RUI5RTk4RUJBNUJDMjBFQ0IwQkRFQ0ExQjBFRDk1OThFQjlEQkMyRQ%3D%3D</div><div class="kicker">DECODE ORDER: URL → BASE64 → HEX → UTF-8</div><div class="kicker" style="margin-top:8px">ACCESS KEY REQUIRED</div></div>
   <label for="password">PASSWORD</label>
-  <input id="password" type="password" placeholder="비밀번호를 입력하십시오." autocomplete="off">
+  <input id="password" type="text" placeholder="비밀번호를 입력하십시오." autocomplete="off" spellcheck="false" autocapitalize="off">
   <div class="actions"><button id="loginBtn">로그인</button></div>
   <div class="error" id="loginError" aria-live="polite"></div>
   <div class="meta"><span>TERMINAL ID: LC-12-044</span><span>LAST SYNC: UNKNOWN</span></div>
@@ -289,7 +198,7 @@ const pages = {
  sealed: {
   kicker:"RESTRICTED DIRECTORY / 12-X",
   title:"봉인된 디렉터리",
-  html:`<div class="warning">접근 권한이 없습니다. 관리자 인증이 필요합니다.</div><p>해당 디렉터리는 별도의 승인 문구를 통해서만 열람할 수 있습니다.</p><label for="archivePassword">AUTHORIZATION PHRASE</label><input id="archivePassword" type="password" placeholder="승인 문구를 입력하십시오." autocomplete="off"><div class="actions"><button id="unlockArchiveBtn">인증</button></div><div class="error" id="archiveError" aria-live="polite"></div><p style="color:#718078">마지막 수정 시각: 기록 없음</p>`
+  html:`<div class="warning">접근 권한이 없습니다. 관리자 인증이 필요합니다.</div><p>해당 디렉터리는 별도의 승인 문구를 통해서만 열람할 수 있습니다.</p><label for="archivePassword">AUTHORIZATION PHRASE</label><input id="archivePassword" type="text" placeholder="승인 문구를 입력하십시오." autocomplete="off" spellcheck="false" autocapitalize="off"><div class="actions"><button id="unlockArchiveBtn">인증</button></div><div class="error" id="archiveError" aria-live="polite"></div><p style="color:#718078">마지막 수정 시각: 기록 없음</p>`
  }
 };
 const loginView=document.getElementById("loginView"), portalView=document.getElementById("portalView"), contentView=document.getElementById("contentView");
