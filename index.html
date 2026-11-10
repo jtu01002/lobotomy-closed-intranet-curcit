@@ -75,6 +75,98 @@ input{background:#080c0a;border-color:#3b473e}
 button,.tile{filter:grayscale(.25);border-color:#465248}
 @media(prefers-reduced-motion:reduce){body:after{animation:none}}
 
+
+/* AGED PAPER / ABANDONED INTRANET LAYER */
+body{
+  background:
+    radial-gradient(ellipse at 12% 18%,#76594a18 0 2%,transparent 13%),
+    radial-gradient(ellipse at 88% 76%,#7d3d3214 0 1.2%,transparent 11%),
+    radial-gradient(ellipse at 50% 0%,#d8c7a6 0,#b8a889 58%,#887d68 100%);
+  color:#39382f;
+}
+header{
+  background:linear-gradient(100deg,#d0c09dF2,#b9aa8cF2);
+  color:#5e594b;
+  border-bottom:1px solid #756b56;
+  text-shadow:none;
+}
+header strong,.status{color:#624f3d}
+.status{border-color:#98776a}
+main{position:relative}
+.panel{
+  color:#39382f;
+  background:
+    radial-gradient(ellipse at 8% 12%,#8c4b3b18 0 1.2%,transparent 9%),
+    radial-gradient(ellipse at 94% 88%,#70423816 0 1.5%,transparent 10%),
+    repeating-linear-gradient(0deg,#74644808 0 1px,transparent 1px 4px),
+    linear-gradient(135deg,#e3d7b9,#cfc09e 55%,#d9c9a7);
+  border-color:#897b60;
+  box-shadow:0 18px 45px #17130d66,inset 0 0 34px #725a351c;
+}
+.panel:before{background:#79684d}
+.panel:after{
+  inset:0;z-index:0;opacity:.32;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 91% 17%,#743b3020 0 1.4%,transparent 7%),
+    radial-gradient(ellipse at 4% 83%,#71392b18 0 1%,transparent 6%),
+    repeating-linear-gradient(92deg,transparent 0 17px,#78694b08 18px,transparent 19px 31px);
+  mix-blend-mode:multiply;
+}
+.panel>*{position:relative;z-index:1}
+.kicker,footer,.meta{color:#71664f}
+h1{color:#38372f}
+h2{color:#59664f}
+p{color:#484438}
+.warning{
+  background:linear-gradient(100deg,#9a59451c,#8b4d3b0d);
+  border-left-color:#895448;color:#70483e;
+}
+.cipher{
+  background:linear-gradient(135deg,#c4b48f,#d7c9a8);
+  border-color:#887b60;box-shadow:inset 0 0 24px #5c4b3026;
+}
+.cipher .code{color:#37382f}
+label{color:#6b604b}
+input{
+  background:#e5d9bc;color:#39372f;border-color:#8c7d60;
+  box-shadow:inset 0 1px 5px #6a563022;
+}
+input:focus{border-color:#69775e;box-shadow:0 0 0 2px #69775e26}
+button{
+  background:#77785e;border-color:#65694f;color:#f0e8d5;
+}
+button:hover{background:#666c54}
+button.secondary{background:#c6b894;border-color:#8b7c60;color:#4a493c}
+.tile{
+  background:
+    radial-gradient(ellipse at 95% 8%,#82483b18 0 1.5%,transparent 10%),
+    repeating-linear-gradient(0deg,#77684b08 0 1px,transparent 1px 4px),
+    linear-gradient(135deg,#dfd2b2,#c9b995);
+  border-color:#918263;color:#3e3b31;
+}
+.tile b{color:#58644f}
+.tile span{color:#71664f}
+.record{
+  background:
+    radial-gradient(ellipse at 97% 12%,#813f331c 0 1.3%,transparent 9%),
+    radial-gradient(ellipse at 3% 91%,#7c493514 0 1%,transparent 7%),
+    repeating-linear-gradient(0deg,#77684b08 0 1px,transparent 1px 4px),
+    linear-gradient(110deg,#dfd2b2,#cbbd9b 48%,#d8c9a7);
+  border-color:#938365;box-shadow:inset 0 0 18px #6a55301c;
+}
+.record:before{background:#856f50}
+.record:after{
+  content:"";position:absolute;left:12px;bottom:9px;width:30px;height:12px;
+  pointer-events:none;opacity:.2;
+  background:radial-gradient(ellipse,#754035 0, #87504466 35%,transparent 72%);
+  transform:rotate(-17deg);
+}
+.record small{color:#766044}
+.record p{color:#494438;text-shadow:none}
+.error{color:#87483e}
+a{color:#59684f}
+@media(max-width:520px){.panel{padding:clamp(18px,4vw,28px)}}
+
 </style>
 </head>
 <body>
